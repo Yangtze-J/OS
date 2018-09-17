@@ -5,7 +5,8 @@
 	 -  When running a program code of a user process, since the code is in user-space memory, so the program counter is pointing to that region.
 	 - When the process is calling the system call “getpid()”, the CPU switches from the user-space to the kernel-space, and reads the PID of the process from the kernel.
 	 - When the CPU has finished executing the “getpid()” system call, it switches back to the user-space memory, and continues running that program code.
- - CPU view)
+ - CPU view
+ 
 ![ ](https://lh3.googleusercontent.com/acgrdPLd4ZvygOSKG14FZiYbLpOvJrYHB-ER7BUYe1hkGb_cj2Ku2CEnrVhPuSRoJgeUkPzE_hI)
 
 #### User time  and  System time
