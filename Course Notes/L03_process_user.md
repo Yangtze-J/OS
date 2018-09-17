@@ -153,6 +153,7 @@ int main(void)
 }
 ```
 There might have two execution results.
+
 | the expected sequential order | the abnormal order |
 |--|--|
 |  $ ./system_implement_2|  $ ./system_implement_2|
@@ -161,6 +162,7 @@ There might have two execution results.
 |System_implement_2.c|system_implement_2   |
 |after...|System_implement_2.c|
 |$ _|$ _|
+
 
 It is very weird to allow different execution orders.
 But...we can’t control the OS scheduler.
