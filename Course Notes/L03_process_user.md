@@ -80,10 +80,10 @@ The **exec\*()** system call family.
 #include<unistd.h>
 int main(void) 
 {
-	printf("before execl ...\n");
-	execl("/bin/ls", "/bin/ls", NULL);
-	printf("after execl ...\n");
-	return 0;
+    printf("before execl ...\n");
+    execl("/bin/ls", "/bin/ls", NULL);
+    printf("after execl ...\n");
+    return 0;
 }
 
 $ ./exec_example
@@ -96,12 +96,12 @@ $ _
 ```
 int main(void) 
 {
-	printf("before execl ...\n");
-	execl("/bin/ls", "/bin/ls", NULL);
+    printf("before execl ...\n");
+    execl("/bin/ls", "/bin/ls", NULL);
 	
-	//The code is not reached below and The process is terminated.
-	printf("after execl ...\n");    
-	return 0;
+    //The code is not reached below and The process is terminated.
+    printf("after execl ...\n");    
+    return 0;
 
 }
 ```
@@ -113,8 +113,8 @@ int main(void)
 /* The program “ls” */
 int main(int argc, char ** argv)
 {
-	......
-	exit(0);
+    ......
+    exit(0);
 }
 
 // The “return” or the “exit()” statement in “/bin/ls” will terminate the process
@@ -133,23 +133,23 @@ fork()+ exec*() = ?
 ```
 int system_ver_3150(const char *cmd_str) 
 {
-	if(cmd_str == -1)
-		return -1;
-	if(fork() == 0) 
-	{
-		execl("/bin/sh", "/bin/sh", "-c", cmd_str, NULL);
-		fprintf(stderr, "%s: command not found\n", cmd_str);
-		exit(-1);
-	}
-	return 0;
+    if(cmd_str == -1)
+	return -1;
+    if(fork() == 0) 
+    {
+	execl("/bin/sh", "/bin/sh", "-c", cmd_str, NULL);
+	fprintf(stderr, "%s: command not found\n", cmd_str);
+	exit(-1);
+    }
+    return 0;
 }
 	
 int main(void) 
 {
-	printf("before...\n");
-	system_ver_3150("/bin/ls");
-	printf("\nafter...\n");
-	return 0;
+    printf("before...\n");
+    system_ver_3150("/bin/ls");
+    printf("\nafter...\n");
+    return 0;
 }
 ```
 There might have two execution results.
@@ -172,16 +172,16 @@ Then, our problem becomes...
 ```
 int system_ver_3150(const char *cmd_str) 
 {
-	if(cmd_str == -1)
-		return -1;
-	if(fork() == 0) 
-	{
-		execl("/bin/sh", "/bin/sh", "-c", cmd_str, NULL);
-		fprintf(stderr, "%s: command not found\n", cmd_str);
-		exit(-1);
-	}
-	wait(NULL);
-	return 0;
+    if(cmd_str == -1)
+	return -1;
+    if(fork() == 0) 
+    {
+	execl("/bin/sh", "/bin/sh", "-c", cmd_str, NULL);
+	fprintf(stderr, "%s: command not found\n", cmd_str);
+	exit(-1);
+    }
+    wait(NULL);
+    return 0;
 }
 ```
 
