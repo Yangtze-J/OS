@@ -10,7 +10,9 @@
 ![ ](https://lh3.googleusercontent.com/acgrdPLd4ZvygOSKG14FZiYbLpOvJrYHB-ER7BUYe1hkGb_cj2Ku2CEnrVhPuSRoJgeUkPzE_hI)
 
 #### User time  and  System time
+
 ![enter image description here](https://lh3.googleusercontent.com/fKZw7N6BV6s2NGVrpNXWNq2phMVBnQBrdo2qw1hU2SK8S6uCV1GheIe26PE1HDKsJnDoHD1J2nk)
+
 User time – CPU time spent on codes in user-space memory.
 Sys time   – CPU time spent on codes in kernel-space memory.
 
@@ -26,7 +28,9 @@ Sys calls may cause even more
 Working of system calls  fork()
 -
 Programmer view of fork()
+
 ![enter image description here](https://lh3.googleusercontent.com/cOMQ7Ho_jXG1onGws3SYfC8uPt-au2fH4cCsZEJzGdFp0zkgR6N2BW3XxS5W7cc6RpMIWsnBFMA)
+
 1. fork() inside the kernel
  A process invokes fork(), and then its properties(PID, running time, array of opened files) are copied;
  > Inside kernel, processes are arranged as a doubly linked list, called the task list.
@@ -57,14 +61,19 @@ That's why **a parent process shares the same terminal output stream as the chil
 Working of system calls     - exec*()
 -
 exec*() that you’ve learnt...
+
 ![enter image description here](https://lh3.googleusercontent.com/XMKmhPcCfFpjVq_WiVJ_2w_CttinwjJAluxbmdSh1fcUKSlB2AO_bE2V7CIuZW0-BPmDBDx6D9o)
+
 The process returns to user-space but is executing another program.
+
 **exec\*() in action**
+
 ![enter image description here](https://lh3.googleusercontent.com/Nhk3OZsCfbqOFJNKgtRGbnVFBnJMDC8Zg3IYxDpGs3P_iaao-meCkwrBTpGcauTMG2nEH-Fqpwc)
 
 Working of system calls  - wait() + exit();
 -
 ![enter image description here](https://lh3.googleusercontent.com/oFcK56R8ItuyFyCgyzDldQ2CPaC_LZ3jprGfcGXszQqn0Klx5Xf2ueolmUGdPmscDmwh_izct34)
+
 **exit() (kernel-view)**
 When the child calls exit(),
 - the kernel frees all the allocated memory.
@@ -135,6 +144,7 @@ However, termination can happen, at any time and in any place. Once it happens, 
 Process lifecycle
 -
 ![enter image description here](https://lh3.googleusercontent.com/13p1-atEmlhILaFSMzNVSGcmyheyJ9QlNdXPabyqxeko6nEwTDvKP3MU1btEDN4wWUgokzqQQq4)
+
 |State| Description |
 |--|--|
 |Start |This is the initial state when a process is first started/created.|
