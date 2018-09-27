@@ -1,2 +1,2 @@
 # OS
-Materials on operating system
+Materials for operating system
